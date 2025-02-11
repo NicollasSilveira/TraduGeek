@@ -1,0 +1,461 @@
+:root {
+    --body: linear-gradient(to bottom, #FFB3C6 0%, #FFC0CB 100%);
+    --body-color: #333;
+    --header: #FFB3C6;
+    --header-color: #333;
+    --nav: #FFB3C6;
+    --nav-a: #000000;
+    --nav-a-hover-bg: #fff;
+    --nav-a-hover: #000;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);;
+    --texto: #333;
+  
+    --h2: #000;
+    --label: #000000;
+    --input-bg: #fff;
+    --input-color: #000;
+    --input-focus-border: #FF6EC7;
+    --input-filled-bg: #fff;
+    --input-filled-color: #000;
+    --scrollbar-bg: #f0f0f0;
+    --scrollbar-thumb: #cccccc;
+  
+    --button-bg: #FF6EC7;
+    --button-color: #ffffff;
+    --button-hover-bg: #FFFFFF;
+    --button-hover-color: #FF6EC7;
+
+    --h2-display: inline-block;
+    --h2-color: #000;
+    --h2-border-right: rgba(0, 0, 0, 0);
+    --h2-text-shadow-1: rgba(0, 0, 0, 0);
+    --h2-text-shadow-2: rgba(0, 0, 0, 0);
+    --animation-duration: 0;
+    --animation-steps: 0
+    --caret-blink-duration: 0;
+    --caret-blink-timing: 0;
+  
+    --footer-borda: rgba(0, 0, 0, 0);
+  
+  
+  
+  }
+  
+  .dark-mode:root {
+    --body: #000;
+    --body-color: #fff;
+    --header: #1a1a1a;
+    --header-color: #fff;
+    --nav: #000;
+    --nav-a: #00FF9D;
+    --nav-a-hover-bg: #ff009d;
+    --nav-a-hover: #fff;
+    --main-bg: #1a1a1a;
+    --texto: #fff;
+  
+    --h2: #00FF9D;
+
+    --label: #fff;
+    --input-bg: #000;
+    --input-color: #fff;
+    --input-focus-border: #00FF9D;
+    --input-filled-bg: #fff;
+    --input-filled-color: #000;
+    --scrollbar-bg: #2b2b2b;
+    --scrollbar-thumb: #555555;
+  
+    --button-bg: #ff009d;
+    --button-color: #fff;
+    --button-hover-bg: #00FF9D;
+    --button-hover-color: #fff;
+  
+
+    --h2-display: inline-block;
+    --h2-color: #00FF9D;
+    --h2-border-right: #00FF9D;
+    --h2-text-shadow-1: #00FF9D;
+    --h2-text-shadow-2: rgba(0, 255, 0, 0.5);
+    --animation-duration: 3.5s;
+    --animation-steps: steps(40, end);
+    --caret-blink-duration: 0.75s;
+    --caret-blink-timing: step-end;
+    
+
+  
+    --button-bg: #ff009d;
+    --button-color: #fff;
+    --button-hover-bg: #00FF9D;
+  
+    --footer-borda: #ff009d;
+  
+  }
+  
+  html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+  
+    body {
+      font-family: 'Source Code Pro', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: var(--body-color);
+      background: var(--body);
+      font-size: 1rem;
+    }
+  
+    header {
+        background: var(--header);
+        color: var(--header-color);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      
+      .barraNav {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        background: var(--nav);
+        border-radius: 0 0 15px 15px;
+        position: relative;
+        overflow-x: auto; /* Permite a rolagem horizontal */
+        z-index: 2;
+        white-space: nowrap; /* Impede a quebra de linha dos itens */
+      }
+      
+      .barraNav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: center; /* Centraliza os itens da barraNav */
+        flex: 1; /* Faz com que o ul ocupe o espaço disponível */
+      }
+      
+      .barraNav li {
+        margin: 0;
+      }
+      
+      .barraNav a {
+        color: var(--nav-a);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .barraNav a:hover {
+        background-color: var(--nav-a-hover-bg);
+        color: var(--nav-a-hover);
+      }
+      
+      .mudarTema {
+        font-size: 1.5rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-left: auto; /* Garante que o botão fique colado à direita na navbar */
+      }
+  
+    main {
+      flex: 1;
+      padding: 2rem;
+      background: var(--main-bg);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .resultado {
+      text-align: center;
+  }
+  
+      h2 {
+        text-align: center; 
+        color: var(--h2); 
+        font-family: 'Consolas', monospace;
+        margin-bottom: 30px; 
+        z-index: 1; 
+      }
+
+  
+      .select-plan-button {
+        background-color: var(--button-bg); 
+        color: var(--button-color);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-transform: uppercase;
+        font-family: 'Consolas', monospace;
+      }
+  
+      .select-plan-button:hover {
+        background-color: var(--button-hover-bg); 
+      }
+  
+    footer .footer-content {
+        text-align: center;
+        padding: 20px;     
+    }
+  
+    footer {
+      border-top: 2px solid var(--footer-borda);
+    }
+
+    .signup-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 1rem;
+        position: relative;
+        text-align: center;
+    }
+    
+    .signup-box {
+        background: transparent; 
+        padding: 2rem;
+        max-width: 800px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px; 
+        text-align: center;
+    }
+    
+    #typing {
+        display: var(--h2-display);
+        border-right: 0.15em solid var(--h2-border-right);
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: 'Consolas', monospace;
+        animation: typing var(--animation-duration) var(--animation-steps), blink-caret var(--caret-blink-duration) var(--caret-blink-timing) infinite;
+        margin-bottom: 3rem; 
+        text-align: center;
+        padding-left: 0.5rem; 
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+        max-width: 17ch;
+        margin-top: -40px;
+    }
+    
+    .signup-box h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--h2-color);
+        font-size: 2rem;
+        font-family: 'Consolas', monospace;
+        text-shadow: 0 0 8px var(--h2-text-shadow-1), 0 0 16px var(--h2-text-shadow-2);
+    }
+    
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #00FF9D; }
+    }
+    
+    .signup-box form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    
+    .signup-box .form-group {
+        flex: 1 1 calc(50% - 1.5rem);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .signup-box label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: var(--label); 
+        z-index: 2;
+    }
+    
+    .signup-box input[type="text"],
+    .signup-box input[type="email"],
+    .signup-box input[type="password"],
+    .signup-box input[type="tel"],
+    .signup-box input[type="date"],
+    .signup-box select {
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: var(--input-bg);
+        color: var(--input-color);
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: background-color 0.3s;
+        z-index: 2;
+    }
+    
+    .signup-box input[type="text"]:focus,
+    .signup-box input[type="email"]:focus,
+    .signup-box input[type="password"]:focus,
+    .signup-box input[type="tel"]:focus,
+    .signup-box input[type="date"]:focus,
+    .signup-box select:focus {
+        outline: none;
+        border-color: var(--input-focus-border);
+    }
+    
+    .signup-box input[type="text"].filled,
+    .signup-box input[type="email"].filled,
+    .signup-box input[type="password"].filled,
+    .signup-box input[type="tel"].filled,
+    .signup-box input[type="date"].filled,
+    .signup-box select.filled {
+        background-color: var(--input-filled-bg);
+        color: var(--input-filled-color);
+    }
+    
+    .form-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    
+    .form-buttons input[type="submit"],
+    .form-buttons input[type="button"] {
+        background: var(--button-bg);
+        color: var(--button-color);
+        border: none;
+        padding: 0.75rem 2rem;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background-color 0.3s, transform 0.3s;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .form-buttons input[type="submit"]:hover,
+    .form-buttons input[type="button"]:hover {
+        background: var(--button-hover-bg);
+        color: var(--button-hover-color);
+        transform: scale(1.05);
+        box-shadow: 0 0 12px var(--button-hover-box-shadow);
+    }
+
+
+    @media (max-width: 768px) {
+        main {
+            padding: 1rem;
+            margin: 0 auto;
+            max-width: 100%; /* Garante que main se ajuste ao tamanho da tela */
+            height: auto; /* Remove restrição de altura */
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .signup-box {
+            padding: 1rem;
+            width: 100%; /* Garante que o formulário ocupe toda a largura disponível */
+            max-width: 600px; /* Limita a largura máxima */
+            margin: 0 auto; /* Centraliza o formulário */
+            box-sizing: border-box;
+        }
+    
+        .signup-box form {
+            flex-direction: column; /* Alinha os campos verticalmente */
+            gap: 1rem;
+        }
+    
+        .signup-box .form-group {
+            flex: 1 1 100%; /* Cada campo ocupa toda a largura */
+            margin-bottom: 1rem;
+        }
+    
+        .form-buttons {
+            flex-direction: column; /* Botões em colunas */
+            gap: 0.5rem;
+        }
+    
+        .form-buttons input[type="submit"],
+        .form-buttons input[type="button"] {
+            width: 100%; /* Botões ocupam a largura total */
+            max-width: none;
+        }
+
+        .olaUsuario {
+          font-size: 0.9rem; /* Reduz levemente o tamanho para telas pequenas */
+          margin-right: 0.5rem; /* Ajusta o espaçamento */
+        }
+    }
+    
+    /* Ajuste para telas muito pequenas (smartphones) */
+    @media (max-width: 480px) {
+        .signup-box {
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+    
+        .signup-box h2 {
+            font-size: 1.5rem;
+        }
+    
+        .signup-box label {
+            font-size: 0.875rem;
+        }
+    
+        .signup-box input[type="text"],
+        .signup-box select {
+            font-size: 0.875rem;
+            padding: 0.75rem;
+            width: 100%; /* Garante que inputs não excedam os limites */
+            box-sizing: border-box;
+        }
+    
+        .form-buttons input[type="submit"],
+        .form-buttons input[type="button"] {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+    
+/* OLÁ USUÁRIO */
+
+.olaUsuario {
+  flex-shrink: 0; /* Impede que o texto seja reduzido */
+  margin-left: 1rem;
+  margin-right: 1rem; /* Espaço entre a mensagem e o próximo item */
+  white-space: nowrap; /* Impede a quebra de linha */
+  font-size: 1rem; /* Tamanho consistente com o restante da barra */
+  color: var(--nav-a); /* Mesma cor dos links */
+  display: flex; /* Garante alinhamento flexível */
+  align-items: center; /* Alinha verticalmente ao centro */
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 3px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Geek - Resultados</title>
+    <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul class="nav-left">
+                <li><a href="index.html">Voltar à tela inicial</a></li>
+                <li><a href="..\index.php">Conheça o TraduGeek</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="music-player">
+                    <button id="playPauseBtn">▶️</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="cherry-blossom-container"></div>
+        <audio id="backgroundMusic" loop>
+            <source src="Música/Pixel Love.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </header>
+    
+    <div class="result-container">
+        <h1>Confira seu Resultado! </h1>
+        <div class="result-box">
+            <h2 class="result-title">Resultado</h2>
+            <p id="result-text">Carregando resultado...</p>
+            <div id="result-image-container"></div> <!-- Contêiner para a imagem -->
+            <a href="index.html" class="menu-btn">Voltar ao Menu</a>
+        </div>
+
+        <footer>
+            <p>Powered by GeekQuiz</p>
+        </footer>
+    </div>
+
+    <footer>
+        <p>© 2024 TraduQuiz. Todos os direitos reservados – Que o poder das palavras e traduções esteja com você!</p>
+    </footer>
+
+    <script>
+        // Recupera a pontuação salva no localStorage
+        const score = localStorage.getItem("quizScore") || 0; // Garante 0 se não existir
+        const totalQuestions = 10; // Total de perguntas configuradas no quiz
+
+        // Atualiza o texto de resultado dinamicamente
+        const resultText = document.getElementById("result-text");
+        resultText.textContent = `Você acertou ${score} de ${totalQuestions} perguntas!`;
+
+        // Adiciona uma imagem com base no resultado
+        const resultImageContainer = document.getElementById("result-image-container");
+        const image = document.createElement("img");
+
+        if (score <= 4) {
+            image.src = "Imagens/player4 (abaixo de 5).png"; // Caminho para a imagem de desempenho baixo
+            image.alt = "Desempenho baixo";
+        } else if (score >= 5) {
+            image.src = "Imagens/player4 (acima de 5).png"; // Caminho para a imagem de desempenho alto
+            image.alt = "Desempenho alto";
+        }
+
+        // Insere a imagem no contêiner
+        resultImageContainer.appendChild(image);
+
+        // Opcional: Limpa o localStorage ao sair, se desejar
+        // localStorage.removeItem("quizScore");
+    </script>
+</body>
+</html>

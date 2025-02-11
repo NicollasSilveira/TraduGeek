@@ -1,0 +1,377 @@
+:root {
+    --body: linear-gradient(to bottom, #FFB3C6 0%, #FFC0CB 100%);
+    --body-color: #333;
+    --header: #FFB3C6;
+    --header-color: #333;
+    --nav: #FFB3C6;
+    --nav-a: #000000;
+    --nav-a-hover-bg: #fff;
+    --nav-a-hover: #000;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);;
+    --texto: #333;
+
+    --h2: #000;
+
+    --plano-card-bg: #fff;
+    --plano-borda: #ddd;
+    --plano-card-h2: #FF8C94;
+    --plano-card-h3: #FF8C94;
+
+    --button-bg: #FF6EC7;
+    --button-color: #fff;
+    --button-hover-bg: #fff;
+    --color-button-hover: #FF6EC7;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);
+
+    --tabela-border: #ddd;
+    --tabela-bg: #FFB3C6;
+    --tabela-alt-bg: #f9f9f9;
+    --tabela-hover-bg: #f1f1f1;
+
+    --scrollbar-bg: #f0f0f0;
+    --scrollbar-thumb: #cccccc;
+
+    
+
+    --footer: #333;
+    --footer-bg: #FFB3C6;
+    --footer-borda: rgba(0, 0, 0, 0);
+}
+
+.dark-mode:root {
+    --body: #000;
+    --body-color: #fff;
+    --header: #1a1a1a;
+    --header-color: #fff;
+    --nav: #000;
+    --nav-a: #00FF9D;
+    --nav-a-hover-bg: #ff009d;
+    --nav-a-hover: #fff;
+    --main-bg: #1a1a1a;
+    --texto: #fff;
+
+    --h2: #ff009d;
+
+    --plano-card-bg: #1a1a1a;
+    --plano-borda: #ddd;
+    --plano-card-h2: #FF8C94;
+    --plano-card-h3: #00FF9D;
+
+    --button-bg: #ff009d;
+    --button-color: #fff;
+    --button-hover-bg: #00FF9D;
+    --color-button-hover: #ffffff;
+
+    
+    --tabela-border: #ddd;
+    --tabela-bg: #161616;
+    --tabela-alt-bg: #303030;
+    --tabela-hover-bg: #333;
+
+    --scrollbar-bg: #2b2b2b;
+    --scrollbar-thumb: #555555;
+
+    --footer: #00FF9D;
+    --footer-bg: #000;
+    --footer-borda: #ff009d;
+
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: var(--body);
+    color: var(--body-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+background: var(--header);
+color: var(--header-color);
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar {
+display: flex;
+align-items: center;
+padding: 0.75rem 1.5rem;
+background: var(--nav); 
+border-radius: 0 0 15px 15px;
+position: relative;
+overflow-x: auto; /* Permite a rolagem horizontal */
+z-index: 2;
+white-space: nowrap;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: var(--nav-a);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--nav-a-hover-bg); 
+    color: var(--nav-a-hover);
+}
+
+.mudarTema {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto; /* Garante que o botão fique colado à direita na navbar */
+}
+
+/* Cabeçalho */
+h2 {
+    color: var(--h2);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Links de navegação */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Formulário de busca */
+form {
+    display: block;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 15px;
+    width: 250px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px; /* Adiciona espaço entre a label e o input */
+    margin-right: 10%;
+    margin-bottom: 6px;
+}   
+
+#buscaLogLabel {
+    margin-right: 8%;
+}
+form button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--color-button-hover);
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    background: var(--main-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+    max-width: 100%;
+  }
+/* Tabela de usuários */
+
+section {
+    max-width: 100%;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--tabela-alt-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.table-container-log {
+    overflow-x: auto; /* Permite rolagem horizontal */
+    width: 100%; /* Garante que o contêiner da tabela ocupe a largura total disponível */
+}
+
+/* Tabela de logs */
+#table-log {
+    width: 100%; /* Ajusta a tabela para caber no container */
+    min-width: 600px; /* Define um tamanho mínimo para a tabela */
+    table-layout: auto; /* Garante que a tabela tenha layout automático */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: var(--tabela-bg);
+    color: white;
+    text-transform: uppercase;
+}
+
+td {
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* Estilos para as ações de editar e excluir */
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.actions a {
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    height: 20px;
+
+}
+
+.actions a.delete {
+    background-color: #dc3545;
+}
+
+.actions a.delete:hover {
+    background-color: #c82333;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 3px;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    padding: 8px 12px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--color-button-hover);
+}
+
+.pagination a.active {
+    background-color: #2980b9;
+    cursor: default;
+}
+
+#seção-usuarios, #Log {
+    padding: 20px;
+}
+
+footer .footer-content {
+    text-align: center;
+    padding: 20px; 
+    color: var(--footer);    
+}
+
+footer {
+    border-top: 2px solid var(--footer-borda);
+    background-color: var(--footer-bg);
+}    
+
+@media (max-width: 768px) {
+    /* Container da tabela de log */
+    .table-container-log {
+        overflow-x: auto; /* Permite rolagem horizontal */
+        -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em dispositivos móveis */
+    }
+
+    /* Tabela de logs */
+    #table-log {
+        width: 100%; /* Ajusta a tabela para caber no container */
+        min-width: 600px; /* Define um tamanho mínimo para a tabela */
+    }
+
+    .olaUsuario {
+        font-size: 0.9rem; /* Reduz levemente o tamanho para telas pequenas */
+        margin-right: 0.5rem; /* Ajusta o espaçamento */
+      }
+}
+
+/* OLÁ USUÁRIO */
+
+.olaUsuario {
+    flex-shrink: 0; /* Impede que o texto seja reduzido */
+    margin-left: 1rem;
+    margin-right: 1rem; /* Espaço entre a mensagem e o próximo item */
+    white-space: nowrap; /* Impede a quebra de linha */
+    font-size: 1rem; /* Tamanho consistente com o restante da barra */
+    color: var(--nav-a); /* Mesma cor dos links */
+    display: flex; /* Garante alinhamento flexível */
+    align-items: center; /* Alinha verticalmente ao centro */
+  }

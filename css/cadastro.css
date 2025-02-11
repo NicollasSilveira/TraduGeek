@@ -1,0 +1,491 @@
+:root {
+    --body: linear-gradient(to bottom, #FFB3C6 0%, #FFC0CB 100%);
+    --body-color: #333;
+    --header: #FFB3C6;
+    --header-color: #333;
+    --nav: #FFB3C6;
+    --nav-a: #000000;
+    --nav-a-hover-bg: #fff;
+    --nav-a-hover: #000;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);
+    --main-box-shadow: rgba(0,0,0,0.1);
+    --texto: #333;
+  
+    --h2: #000;
+    --label: #000000;
+    --input-bg: #fff;
+    --input-color: #000;
+    --input-focus-border: #FF6EC7;
+    --input-filled-bg: #fff;
+    --input-filled-color: #000;
+  
+    --button-bg: #FF6EC7;
+    --button-color: #333;
+    --button-hover-bg: #FFFFFF;
+    --button-hover-color: #FF6EC7;
+
+  
+    --footer: #333;
+    --texto-footer: rgba(0, 0, 0, 0);
+    --footer-borda: rgba(0, 0, 0, 0);
+    --footer-sombra: rgba(0, 0, 0, 0);
+    --footer-bg: #FFB3C6;
+    --a-color: #000;
+  
+    --h2-display: inline-block;
+    --h2-color: #000;
+    --h2-border-right: rgba(0, 0, 0, 0);
+    --h2-text-shadow-1: rgba(0, 0, 0, 0);
+    --h2-text-shadow-2: rgba(0, 0, 0, 0);
+    --animation-duration: 0;
+    --animation-steps: 0
+    --caret-blink-duration: 0;
+    --caret-blink-timing: 0;
+  
+  }
+  
+  .dark-mode:root {
+    --body: #1a1a1a;
+    --body-color: #fff;
+    --header: #1a1a1a;
+    --header-color: #fff;
+    --nav: #000;
+    --nav-a: #00FF9D;
+    --nav-a-hover-bg: #ff009d;
+    --nav-a-hover: #fff;
+    --main-bg: rgba(0, 0, 0, 0);
+    --main-box-shadow: rgba(0, 0, 0, 0);
+    --texto: #fff;
+  
+    --h2: #ff009d;
+  
+    --label: #fff;
+    --input-bg: #000;
+    --input-color: #fff;
+    --input-focus-border: #00FF9D;
+    --input-filled-bg: #fff;
+    --input-filled-color: #000;
+  
+    --button-bg: #ff009d;
+    --button-color: #fff;
+    --button-hover-bg: #00FF9D;
+    --button-hover-color: #fff;
+  
+    --footer: #00FF9D;
+    --texto-footer: #00FF9D;
+    --footer-borda: #ff009d;
+    --footer-bg: #000;
+    --a-color: #00FF9D;
+
+    --h2-display: inline-block;
+    --h2-color: #00FF9D;
+    --h2-border-right: #00FF9D;
+    --h2-text-shadow-1: #00FF9D;
+    --h2-text-shadow-2: rgba(0, 255, 0, 0.5);
+    --animation-duration: 3.5s;
+    --animation-steps: steps(40, end);
+    --caret-blink-duration: 0.75s;
+    --caret-blink-timing: step-end;
+  
+  }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--body); 
+
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--body-color);
+}
+
+/* Nav - INICIO */
+
+header {
+    background: var(--header);
+    color: var(--header-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--nav);
+    border-radius: 0 0 15px 15px;
+    position: relative;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: var(--nav-a);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--nav-a-hover-bg);
+    color: var(--nav-a-hover);
+}
+
+.mudarTema {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Posiciona o ícone fora do fluxo normal */
+    right: 1.5rem; /* Alinha o ícone à direita */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+/* Nav - FIM */
+
+/* Cadastro - INICIO */
+
+main {
+    flex: 1;
+    padding: 2rem;
+    background: var(--main-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--main-box-shadow);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.signup-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    position: relative;
+    text-align: center;
+}
+
+.signup-box {
+    background: transparent; 
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; 
+    text-align: center;
+}
+
+#tituloCad {
+    display: var(--h2-display);
+    border-right: 0.15em solid var(--h2-border-right);
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Consolas', monospace;
+    animation: tituloCad var(--animation-duration) var(--animation-steps), blink-caret var(--caret-blink-duration) var(--caret-blink-timing) infinite;
+    margin-bottom: 3rem; 
+    text-align: center;
+    padding-left: 0.5rem; 
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    max-width: 8ch;
+    margin-top: -40px;
+}
+
+.signup-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--h2-color);
+    font-size: 2rem;
+    font-family: 'Consolas', monospace;
+    text-shadow: 0 0 8px var(--h2-text-shadow-1), 0 0 16px var(--h2-text-shadow-2);
+}
+
+@keyframes tituloCad {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00FF9D; }
+}
+
+.signup-box form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.signup-box .camposCad {
+    flex: 1 1 calc(50% - 1.5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-box label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--label); 
+    z-index: 2;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"],
+.signup-box input[type="tel"],
+.signup-box input[type="date"],
+.signup-box select {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: var(--input-bg);
+    color: var(--input-color);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.signup-box input[type="text"]:focus,
+.signup-box input[type="email"]:focus,
+.signup-box input[type="password"]:focus,
+.signup-box input[type="tel"]:focus,
+.signup-box input[type="date"]:focus,
+.signup-box select:focus {
+    outline: none;
+    border-color: var(--input-focus-border);
+}
+
+.signup-box input[type="text"].filled,
+.signup-box input[type="email"].filled,
+.signup-box input[type="password"].filled,
+.signup-box input[type="tel"].filled,
+.signup-box input[type="date"].filled,
+.signup-box select.filled {
+    background-color: var(--input-filled-bg);
+    color: var(--input-filled-color);
+}
+
+.botaoCad {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.botaoCad input[type="submit"],
+.botaoCad input[type="reset"] {
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.botaoCad input[type="submit"]:hover,
+.botaoCad input[type="reset"]:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 12px var(--button-hover-box-shadow);
+}
+
+.signup-info {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.signup-info a {
+    color: var(--a-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-info a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: var(--footer-bg);
+    color: var(--footer);
+    padding: 1rem;
+    text-align: center;
+    border-top: 2px solid var(--footer-borda);
+    width: 98.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textoRodapeCad {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-shadow: 0 0 5px var(--texto-footer);
+}
+
+.bottom-left-image {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 350px;
+    margin-left: 60px;
+}
+
+#cherry-blossoms {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1; 
+  }
+  
+  .blossom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("../Imagens/flor-cerejeira.png");
+    background-size: cover;
+    animation: fall linear infinite;
+    opacity: 0.9;
+  
+  }
+  
+  @keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+  }
+
+/* Cadastro - FIM */
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 2rem 1rem;
+    }
+
+    .signup-box {
+        padding: 1.5rem;
+    }
+
+    .signup-box form {
+        flex-direction: column;
+    }
+
+    .botaoCad input[type="submit"],
+    .botaoCad input[type="reset"] {
+        width: auto;
+        max-width: none;
+    }
+
+    .theme-icon {
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 0.5rem;
+    }
+
+    .theme-icon {
+        right: 0.5rem;
+    }
+
+    .signup-container {
+        padding: 2rem 1rem;
+    }
+
+    .signup-box {
+        padding: 1.5rem;
+    }
+
+    .signup-box form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .signup-box {
+        padding: 1rem;
+    }
+
+    .botaoCad input[type="submit"],
+    .botaoCad input[type="reset"] {
+        width: auto;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        display: flex;
+        justify-content: center; /* Centraliza os itens na navbar */
+        gap: 0.5rem; /* Ajuste do espaço entre os itens */
+        padding: 0;
+        width: 100%; /* Garante que ocupe toda a largura da tela */
+    }
+    .navbar a {
+        padding: 0.5rem;
+        font-size: 0.75rem; /* Diminui o tamanho da fonte para caber melhor */
+        flex-shrink: 1; /* Permite que os links diminuam conforme necessário */
+    }
+
+    .mudarTema {
+        font-size: 1.25rem; /* Reduz um pouco o tamanho do ícone */
+        padding-left: 0.5rem; /* Ajusta o espaçamento do ícone */
+    }
+
+    .navbar {
+        padding: 0.5rem; /* Reduz o padding geral da navbar */
+    }
+
+
+    .signup-box h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Span*/
+.span-required, .mensagemErro {
+    display: none; /* Esconder por padrão */
+    color: red; /* Cor do texto de erro */
+}
+
+/* FIM span*/

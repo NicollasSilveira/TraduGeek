@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraduQuiz 🌸</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="..\index.php">Conheça o TraduGeek</a></li>
+                <!-- Player de música -->
+                <li id="player-music" class="music-player">
+                    <button id="playPauseBtn">▶️</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="cherry-blossom-container"></div> <!-- Contêiner para flores de cerejeira -->
+        <!-- Elemento de áudio -->
+        <audio id="backgroundMusic" loop>
+            <source src="Música/Pixel Love.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </header>
+
+    <section class="intro">
+        <img src="Imagens/logo.png" id="imagemLogo" alt="Descrição da imagem" class="intro-image">
+        <h1>Welcome to TraduQuiz – Your Ultimate Language Adventure! ようこそ!</h1>
+        <p>TraduQuiz é o lugar perfeito para treinar suas habilidades linguísticas enquanto se diverte com quizzes desafiadores! Escolha entre inglês, japonês, e enfrente desafios que vão colocar seu conhecimento à prova. Está pronto para aceitar o desafio? Let's go, it's time to level up your translation skills and geek out! さあ、冒険を始めよう！</p>
+        <!-- Botões para selecionar o idioma -->
+        <div class="language-buttons">
+            <a href="quiz_ingles.html" class="btn">
+                <img src="Imagens/player1.png" id="personagemJulio" alt="Inglês" class="btn-image">
+                <span>Iniciar Quiz em Inglês</span>
+            </a>
+            <a href="quiz_japones.html" class="btn">
+                <img src="Imagens/player2.png" alt="Japonês" class="btn-image">
+                <span>Iniciar Quiz em Japonês</span>
+            </a>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>© 2024 TraduQuiz. Todos os direitos reservados – Que o poder das palavras e traduções esteja com você!</p>
+    </footer>
+
+    <script>
+        // Função para gerar flores de cerejeira aleatórias com imagem
+        function createFlower() {
+            const container = document.querySelector('.cherry-blossom-container');
+
+            // Criando o elemento de imagem para a flor
+            const flower = document.createElement('img');
+            flower.classList.add('flower');
+
+            // Defina o caminho da sua imagem aqui
+            flower.src = 'Imagens/efeito-flor.png';  // Substitua com o caminho correto
+
+            // Definindo uma posição aleatória no eixo X
+            flower.style.left = Math.random() * 100 + 'vw'; // largura da tela (100% da largura da tela)
+
+            // Definindo um atraso aleatório para o início da animação
+            flower.style.animationDelay = Math.random() * 2 + 's'; // Atraso de 0 a 2 segundos
+
+            // Adicionando a flor ao contêiner
+            container.appendChild(flower);
+
+            // Remover a flor após a animação para evitar acumulação de elementos
+            setTimeout(() => {
+                flower.remove();
+            }, 5000); // Remover a flor após 5 segundos (tempo total da animação)
+        }
+
+        // Gerando flores a cada 300 milissegundos
+        setInterval(createFlower, 300);
+
+        // Controle de música
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '⏸️'; // Ícone de pausa
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '▶️'; // Ícone de play
+            }
+        });
+    </script>
+</body>
+</html>

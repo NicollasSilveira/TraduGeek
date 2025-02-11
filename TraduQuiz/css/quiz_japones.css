@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração geral */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Navbar fixa */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fea7a6;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .nav-left {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-right {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-right .music-player {
+    margin-left: auto;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #333;
+}
+
+.navbar .music-player button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar .music-player button:hover {
+    color: #FF6EC7;
+}
+
+/* Container do quiz */
+.quiz-container {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: auto;
+}
+
+.quiz-container header {
+    text-align: center;
+    background-color: #fea7a6;
+    color: white;
+    padding: 20px 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-container header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.quiz-container header p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.question-box {
+    padding: 20px;
+    text-align: center;
+}
+
+.question-box .question {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #fea7a6;
+    font-weight: bold;
+}
+
+.answer-btns {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+.answer-btn {
+    background-color: #f4f4f4;
+    color: #333;
+    border: 2px solid #fea7a6;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.answer-btn:hover {
+    background-color: #fea7a6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.answer-btn:active {
+    transform: translateY(1px);
+}
+
+.footer {
+    background-color: #fea7a6;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 0 0 10px 10px;
+}
+
+.footer-image {
+    position: absolute;
+    right: 80px;  /* Distância do lado direito */
+    bottom: 50px; /* Distância da parte inferior */
+    height: 22.5%; /* Ajuste o tamanho da imagem conforme necessário */
+}
+
+/* Footer */
+footer {
+    background-color: #fea7a6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+footer a:hover {
+    color: #fd8583;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .question-box .question {
+        font-size: 18px;
+    }
+
+    .answer-btn {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    footer {
+        margin-top: auto;
+    }
+
+    .footer-image {
+        display: none;
+    }
+
+    .quiz-container {
+        margin-top: 25%;
+        margin-bottom: 11%;
+    }
+}

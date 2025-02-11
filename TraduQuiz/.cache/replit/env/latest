@@ -1,0 +1,55 @@
+declare -gx GIT_EDITOR=replit-git-editor
+read -r _new_path <<< "/nix/store/a22sb3q74603nbjwql9lj76vj4x52ygh-pid1/bin:/nix/store/7ihnnj0al529c07bvzwad3h4sr40bj8m-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#PATH=/nix/store/a22sb3q74603nbjwql9lj76vj4x52ygh-pid1/bin:/nix/store/7ihnnj0al529c07bvzwad3h4sr40bj8m-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+if [ -e "/run/replit/env/last" ]; then read -r _last_path < <(\grep '^#PATH=' /run/replit/env/last | cut -f 2 -d =); fi
+_user_components="$(\tr : $'\n' <<< "${PATH:-}" |\grep -xv -f <(\tr : $'\n' <<< "${_last_path}") |\tr $'\n' :)"
+declare -gx PATH="${_user_components}${_new_path}"
+declare -gx REPLIT_PID1_FLAG_REPLIT_RTLD_LOADER=1
+declare -gx REPLIT_NIX_CHANNEL=stable-23_11
+declare -gx HOSTNAME=db4d01165e52
+declare -gx REPLIT_RIPPKGS_INDICES=/nix/store/73awzgwmrga8y0dl84cp30h40965wyk5-rippkgs-indices
+declare -gx __EGL_VENDOR_LIBRARY_FILENAMES=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/share/glvnd/egl_vendor.d/50_mesa.json
+declare -gx NIX_PROFILES='/nix/var/nix/profiles/default /home/runner/.nix-profile'
+declare -gx LIBGL_DRIVERS_PATH=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/lib/dri
+declare -gx REPLIT_DEV_DOMAIN=a7acffe2-d769-4619-9b4d-01187efd1271-00-1nsh9i64mty19.kirk.replit.dev
+declare -gx GIT_ASKPASS=replit-git-askpass
+declare -gx REPLIT_RTLD_LOADER=1
+declare -gx NIXPKGS_ALLOW_UNFREE=1
+declare -gx REPL_IDENTITY_KEY=k2.secret.eSu6Q9zIJtcmdEDVB7KuW0E8sQg9zpGlp1NGRxYsnWjR_2nqvErZZ_NStaes2QP___vp7r16vrJnMPq8lBMSBw
+declare -gx REPL_OWNER=mejuliocesar
+declare -gx REPL_LANGUAGE=html
+declare -gx LANG=en_US.UTF-8
+declare -gx XDG_CONFIG_HOME=/home/runner/TraduQuiz/.config
+declare -gx NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+declare -gx DIRENV_CONFIG=/etc/direnv
+declare -gx REPL_IMAGE=gcr.io/marine-cycle-160323/nix:bf8590a3e2f0a8b70b7ca175eeed9074dffbfca9
+declare -gx XDG_CACHE_HOME=/home/runner/TraduQuiz/.cache
+declare -gx REPLIT_LD_AUDIT=/nix/store/n5x1kgbz8zjh63ymsijbislyi1n1hir6-replit_rtld_loader-1/rtld_loader.so
+declare -gx REPLIT_SUBCLUSTER=interactive
+declare -gx REPLIT_PID1_VERSION=0.0.0-5f507ff
+declare -gx SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPL_HOME=/home/runner/TraduQuiz
+declare -gx REPL_IDENTITY=v2.public.Q2lSaE4yRmpabVpsTWkxa056WTVMVFEyTVRrdE9XSTBaQzB3TVRFNE4yVm1aREV5TnpFU0RHMWxhblZzYVc5alpYTmhjaG9KVkhKaFpIVlJkV2w2SWlSaE4yRmpabVpsTWkxa056WTVMVFEyTVRrdE9XSTBaQzB3TVRFNE4yVm1aREV5TnpFNGxvNjhFVm9UQ2dScmFYSnJFZ3RwYm5SbGNtRmpkR2wyWlE9PRU4jTYudYQBVrXhlfEFre9z36ES1uDYic7eXakE64UwG2BqWZxTOAL2lpEWAIEnYO-G7GVa_y7H3saRE8y5hgQ.R0FFaUJtTnZibTFoYmhLUkNIWXlMbkIxWW14cFl5NVJNbVI2VTFoWmNsRXhhREZhTVd4U1RVZFdObU13ZERSVFZYaEVVMVJrVjJKcVpIWlNNRlpMVlVoak0xRXpUbWhSVjJodVVtdGtjRmRWZEV0U01GVjZWMVprVDJKV2NIUldXR3hOVmpGRmVsUnRjSEprUlRWRlYxaG9VRlY2UVRGWFYzQlRZVEI0VlZGWWFFNVdSMk42VjJ4a1lXRXdNVlZUVkU1T1ZXMDVVRkpYWkRSa1JuQllZMFJHYVZJeWVESlhWRXBYWld4c1dWTlhSa05XUjJ4WVlXNUtNMVZyWkc1WFYyeERVak5TZDFreU1YcFpWVkpVWWpCNGFGWjZWWGRYYkdoTFlVWnJlbFZ1UW10aVZsWndWR3hrZW1WVmVIVlJha1phWWxob2QxZFlhekJrTVhCeFlraGtUMkpyYnpCVk0zQkxWMFp3ZFdOR1dtcGlSMUl4V1RKek1XTnNTa2RQVjFwWlpXMU5lVmRzVWxwT1ZuQlpVMVJLYkZadVFUSlZhMUpoVFd4T2MxSnNWbE5XTWxKeGFYQlBlVkpSTjFBd2FsbElPWEZ3Y2t0bWFUZHVXR0Z4YUVsSWVGZFBPV00wZGtKeFFVRmxNa3RFU0VaNFZtMURMVTl5YVV0dE5EaEVUQzAxYjFsdFlsbE9Ra0kyY1hjNE4wMXRTemRXVDBGell6TmFRV2N1VWpCR1JtRlZTblJVYmxwcFlsUkdiMWx0YUUxWmEwWjFWMWhzVFdKclNYaFhWekUwWTBac05VNVdTazVpVmtreVZsUkdhMDFIVm5SVGJGcFVZbTVDVjFadE1UUlZNVkp5VlcxR1RsWnVRbGRWTW5SUFZrWmFXV0ZGVmxabGEwcHlWV3BCTVZOV1JuSlRiRnBPVW14d1UxWnRjRTlaVjFKWFlqTm9VMkpYYUZOV2FrcHZaRlpXV0dSSGRHbGlSVFZZV1d0V1QxWnRTbFZpUlZaV1lXdEtTRnBIZUhOV2JFcDFVbXhLVjFaWVFrcFdNbkJEWXpGa2MxSnNhR2hUUm5CVFZGVmtVMUV4V2tkYVJXUlNZbFZhU1ZkclZYaFZNREYwVld0MFYwMVdXbFJWVkVwS1pERlNjbUZHU2xkaE1YQjJWbFphYTJJeVNuTlVia3BwVTBWYVdGbHRkSGRVTVd4WFZXeGtUazFZUWtoWGExWXdZV3N4Y2xkc2JGZFNiV2hZVmtSR1lXUkhWa2xqUm1SWFlsWktTVlpHVWt0VU1rMTVVMnBhVm1GNmJGaFVWM2hMWWpGWmVVMVVVbFJOYTFwSFZGWldhMVpIU2taWGJGcGFWbnBGTUZkV1duTk9iRVpWVW0xd2FWSllRalpXUkVaWFdWZEZlVk5zYkZaV1JWcFhXV3RhWVdOc2NFaGxSVnBzVW01Q1JsWXlNWGRoUjBWNFkwYzVWMkZyV2xSVmVrWk9aVVphYzFOc1JsZFNSVW96VmpKMFlWZHRUblJqUlRGUVYwVTBlbHBGVmxwT1ZuQkZVbGhTYVdKVVZsRlVNR1JoVlcxS1dHRkVTbFJTVm5CNFZtdFdjbVJIVWtWaFJYQnBZbFp3VVZkRVNYaFdWVEYwV1hwU2FsZElRa1pWYTJSV1RrWmFSV0pHVW1oTlZrbzJWMjE0YjJKWFZuSmlla0pZVmxVeE5sZHRjM2RsYkdSV1RsaEtWRlpIVWxsWFYydDNUbFpLY2xWdE9VOWhWRVpNVkdwSk5WSkZlSE5UV0dSVFlURndiMVpzVm5kTlJscElUbGRHYUZZd2NGWlZiVEExVjIxS1dGVnFTbFpoYTNCUVZURmFUMlJXWkhSU2JFNVRaVzFuTUE9PQ
+declare -gx DOCKER_CONFIG=/home/runner/TraduQuiz/.config/docker
+declare -gx REPLIT_BASHRC=/nix/store/vxzp0jk1x0l6w6v1xhq7fi9rrw2jf2zj-replit-bashrc/bashrc
+declare -gx USER=runner
+declare -gx DISPLAY=:0
+declare -gx REPLIT_DOMAINS=a7acffe2-d769-4619-9b4d-01187efd1271-00-1nsh9i64mty19.kirk.replit.dev
+declare -gx REPL_SLUG=TraduQuiz
+declare -gx REPLIT_CLI=/nix/store/v9a8mkg8s36s8iwj0wrsvjj3cd1lxn8n-pid1-0.0.1/bin/replit
+declare -gx REPL_PUBKEYS='{"crosis-ci":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:1":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:latest":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","prod":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:1":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:2":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:3":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:4":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:5":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:latest":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","vault-goval-token":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:1":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:latest":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E="}'
+declare -gx COLORTERM=truecolor
+declare -gx NIX_PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+declare -gx DENO_TLS_CA_STORE=system
+declare -gx REPL_ID=a7acffe2-d769-4619-9b4d-01187efd1271
+declare -gx REPL_OWNER_ID=36636438
+declare -gx PROMPT_DIRTRIM=2
+declare -gx REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPLIT_DB_URL=https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE3MzI3NDgzNTAsImlhdCI6MTczMjYzNjc1MCwiZGF0YWJhc2VfaWQiOiJhN2FjZmZlMi1kNzY5LTQ2MTktOWI0ZC0wMTE4N2VmZDEyNzEifQ.qvMS-EhhifQKIEt0QWrY6bCARvZ0Qxps60MRStSmVKxQ9cztBrfPsFQKTPnDhz374LEXiWp_vSIlz47sNBVb_A
+declare -gx REPLIT_CLUSTER=kirk
+declare -gx HOME=/home/runner
+declare -gx LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+declare -gx REPLIT_ENVIRONMENT=production
+declare -gx REPLIT_PID1_FLAG_NIXMODULES_BEFORE_REPLIT_NIX=1
+declare -gx XDG_DATA_HOME=/home/runner/TraduQuiz/.local/share
+declare -gx NIX_PATH=nixpkgs=/home/runner/.nix-defexpr/channels/nixpkgs-stable-23_11:/home/runner/.nix-defexpr/channels

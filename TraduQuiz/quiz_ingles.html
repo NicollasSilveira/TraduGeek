@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraduQuiz - Perguntas</title>
+    <link rel="stylesheet" href="css/quiz_ingles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navbar fixa no topo -->
+        <header class="navbar">
+            <nav>
+                <ul class="nav-left">
+                    <li><a href="index.html">Voltar à tela inicial</a></li>
+                    <li><a href="..\index.php">Conheça o TraduGeek</a></li>
+                </ul>
+                <ul class="nav-right">
+                    <li class="music-player">
+                        <button id="playPauseBtn">▶️</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cherry-blossom-container"></div>
+            <audio id="backgroundMusic" loop>
+                <source src="Música/Pixel Love.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </header>
+
+        <!-- Conteúdo principal do quiz -->
+        <main class="quiz-container">
+            <header>
+                <h1>TraduGeek</h1>
+                <p>Desafie seus conhecimentos de Inglês e Japonês!</p>
+            </header>
+
+            <div class="question-box">
+                <h2 class="question" id="question">Carregando...</h2>
+                <div id="answers" class="answer-btns"></div>
+            </div>
+            <!-- Powered by TraduGeek -->
+            <div class="footer">
+                <p>Powered by TraduGeek</p>
+            </div>
+        </main>
+         <img src="Imagens/player3.png" alt="Imagem de footer" class="footer-image">
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 TraduQuiz. Todos os direitos reservados – Que o poder das palavras e traduções esteja com você!</p>
+        </footer>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "Qual é o nome do personagem principal de 'Spider-Man'?", answers: ["Peter Parker", "Bruce Wayne", "Clark Kent", "Tony Stark"], correct: 0 },
+            { question: "Quem é o criador de 'Dragon Ball'?", answers: ["Osamu Tezuka", "Masashi Kishimoto", "Akira Toriyama", "Eiichiro Oda"], correct: 2 },
+            { question: "Em qual cidade se passa a maior parte de 'Batman Begins'?", answers: ["Gotham City", "Metropolis", "Central City", "Star City"], correct: 0 },
+            { question: "Qual é o nome do mundo fictício onde se passa 'The Lord of the Rings'?", answers: ["Narnia", "Middle-earth", "Hogwarts", "Westeros"], correct: 1 },
+            { question: "Qual série de TV tem o famoso personagem 'Walter White'?", answers: ["Breaking Bad", "The Sopranos", "Game of Thrones", "Narcos"], correct: 0 },
+            { question: "O que significa a sigla 'S.H.I.E.L.D.' no universo Marvel?", answers: ["Special Homeland Interventions and Enforcement League", "Strategic Homeland Intervention, Enforcement and Logistics Division", "Super Human Interventions and Enforcement League", "Security Homeland Intervention Enforcement Logistics Division"], correct: 1 },
+            { question: "Qual é o nome do mestre de Naruto em 'Naruto'?", answers: ["Kakashi Hatake", "Jiraiya", "Iruka Umino", "Minato Namikaze"], correct: 0 },
+            { question: "Qual é o nome do protagonista de 'The Witcher'?", answers: ["Geralt of Rivia", "Ciri", "Yennefer", "Jaskier"], correct: 0 },
+            { question: "Qual é o nome da espada de Luke Skywalker em 'Star Wars'?", answers: ["Excalibur", "The Darksaber", "Lightsaber", "Anakin's Saber"], correct: 2 },
+            { question: "Quem é o criador de 'One Piece'?", answers: ["Tite Kubo", "Eiichiro Oda", "Hiro Mashima", "Akira Toriyama"], correct: 1 },
+            { question: "Qual é o nome do computador inteligente em 'Iron Man'?", answers: ["HAL 9000", "Jarvis", "Cortana", "Friday"], correct: 1 },
+            { question: "Em qual cidade se passa a maior parte da série 'Stranger Things'?", answers: ["New York", "Hawkins", "Sunnydale", "Chicago"], correct: 1 },
+            { question: "Qual é o nome da nave em que os personagens viajam em 'Guardians of the Galaxy'?", answers: ["Serenity", "Millennium Falcon", "TARDIS", "Milano"], correct: 3 },
+            { question: "Em qual universo se passa a série 'The Mandalorian'?", answers: ["Star Wars", "Marvel", "DC", "Star Trek"], correct: 0 },
+            { question: "Qual é o nome da arma utilizada por Kratos em 'God of War'?", answers: ["Blade of Olympus", "Leviathan Axe", "Buster Sword", "Excalibur"], correct: 1 },
+            { question: "Qual é o nome da cidade onde se passa 'The Umbrella Academy'?", answers: ["New York", "Dallas", "Paris", "The City"], correct: 3 },
+            { question: "Quem é o autor de 'Harry Potter'?", answers: ["J.R.R. Tolkien", "J.K. Rowling", "George R.R. Martin", "Rick Riordan"], correct: 1 },
+            { question: "Qual personagem é o líder dos Vingadores no MCU?", answers: ["Thor", "Iron Man", "Captain America", "Black Panther"], correct: 2 },
+            { question: "Qual é o nome do protagonista de 'Attack on Titan'?", answers: ["Luffy", "Naruto", "Eren Yeager", "Monkey D. Luffy"], correct: 2 },
+            { question: "Em qual filme da Marvel aparece o personagem 'Doctor Strange'?", answers: ["Avengers: Infinity War", "Captain America: The Winter Soldier", "Iron Man", "Doctor Strange"], correct: 3 },
+            { question: "Qual é o nome da espada em 'The Legend of Zelda'?", answers: ["Excalibur", "Master Sword", "Sword of Destiny", "Triforce Blade"], correct: 1 },
+            { question: "Qual é o nome do ator que interpretou o personagem 'Wolverine' nos filmes X-Men?", answers: ["Chris Hemsworth", "Hugh Jackman", "Ryan Reynolds", "Robert Downey Jr."], correct: 1 },
+            { question: "Quem é o autor do manga 'Death Note'?", answers: ["Tsugumi Ohba", "Hiroshi Shiibashi", "Masashi Kishimoto", "Kazuo Koike"], correct: 0 },
+            { question: "Qual é o nome do planeta natal de Superman?", answers: ["Krypton", "Tatooine", "Vulcan", "Naboo"], correct: 0 },
+            { question: "Qual é o nome da ferramenta mágica que Harry Potter usa em seus feitiços?", answers: ["Wand", "Staff", "Rod", "Magic Stick"], correct: 0 }
+        ];
+
+        let currentQuestionIndex = 0;
+        let shuffledQuestions = [];
+        let score = 0;
+
+        function shuffleQuestions() {
+            shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 10);
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= shuffledQuestions.length) {
+                localStorage.setItem("quizScore", score); // Salva a pontuação no localStorage
+                window.location.href = 'result.html'; // Redireciona para a página de resultados
+                return;
+            }
+
+            const questionData = shuffledQuestions[currentQuestionIndex];
+            const questionElement = document.getElementById("question");
+            const answersContainer = document.getElementById("answers");
+
+            questionElement.textContent = questionData.question;
+            answersContainer.innerHTML = "";
+
+            questionData.answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.classList.add("answer-btn");
+                button.textContent = answer;
+                button.onclick = () => checkAnswer(button, index === questionData.correct);
+                answersContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(button, isCorrect) {
+            const buttons = document.querySelectorAll(".answer-btn");
+            buttons.forEach(btn => btn.disabled = true);
+
+            const questionElement = document.getElementById("question");
+
+            if (isCorrect) {
+                button.style.backgroundColor = '#00CFFF';
+                button.style.boxShadow = '0 0 20px #00CFFF';
+                button.innerHTML += ' - <strong>Correto!</strong>';
+                questionElement.innerHTML += '<br><span style="color: #00CFFF;">Resposta correta!</span>';
+                score++; // Incrementa a pontuação
+            } else {
+                button.style.backgroundColor = '#FF6EC7';
+                button.style.boxShadow = '0 0 20px #FF6EC7';
+                button.innerHTML += ' - <strong>Errado!</strong>';
+                questionElement.innerHTML += '<br><span style="color: #FF6EC7;">Resposta errada!</span>';
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                loadQuestion();
+            }, 2000);
+        }
+
+        document.getElementById("playPauseBtn").addEventListener("click", () => {
+            const audio = document.getElementById("backgroundMusic");
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = "⏸️";
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = "▶️";
+            }
+        });
+
+        shuffleQuestions();
+        loadQuestion();
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+:root {
+  --color-button: #ffffff;
+  --bg-color-button: #FF6EC7;
+  --bg-color-button-hover: #ffffff;
+  --color-button-hover: #FF6EC7;
+}
+
+.dark-mode:root {
+  --color-button: #ffffff;
+  --bg-color-button: #ff009d;
+  --bg-color-button-hover: #00FF9D;
+  --color-button-hover: #ffffff;
+}
+
+/*De Volta ao Topo - BOTÃO*/
+
+
+
+#voltarAoTopo {
+    position: fixed;
+    bottom: 2%;
+    right: 1.5%;
+    display: none;
+    font-size: 24px;
+    background-color: var(--bg-color-button);
+    color: var(--color-button);
+    width: 36px; 
+    height: 35px;
+    border-radius: 10%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 5;
+  }
+  
+  #voltarAoTopo:hover {
+    background-color: var(--bg-color-button-hover);
+    color: var(--color-button-hover);
+  }

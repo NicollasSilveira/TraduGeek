@@ -1,0 +1,472 @@
+:root {
+    --body: linear-gradient(to bottom, #FFB3C6 0%, #FFC0CB 100%);
+    --body-color: #333;
+    --header: #FFB3C6;
+    --header-color: #333;
+    --nav: #FFB3C6;
+    --nav-a: #000000;
+    --nav-a-hover-bg: #fff;
+    --nav-a-hover: #000;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);;
+    --texto: #333;
+
+    --section-admin: #fff; 
+    --section-admin-h2: #FF8C94;
+    --ilustrativo: black;
+
+    --tabela-border: #ddd;
+    --tabela-bg: #f4f4f4;
+    --tabela-alt-bg: #f9f9f9;
+    --tabela-hover-bg: #f1f1f1;
+
+    --scrollbar-bg: #f0f0f0;
+    --scrollbar-thumb: #cccccc;
+
+    --button-acao-bg: #FF6EC7;
+    --button-acao-color: #fff;
+    --button-acao-hover-bg: #ffffff;
+    --button-acao-hover-color: #FF6EC7;
+    --button-acao-hover-border: #FF6EC7;
+
+    --estatistica-bg: #fff;
+    --estatistica-color: #ccc;
+
+    --button-view-more-bg: #6c757d;
+    --button-view-more-color: #fff;
+    --button-view-more-hover-bg: #5a6268;
+
+    --modal-bg: #fefefe;
+    --modal-border: #888;
+    --modal-input-border: ;
+    --modal-input-bg: #ffffff;
+    --modal-input-color: #000000;
+    --modal-button-bg: ;
+    --modal-button-color: ;
+    --modal-button-hover-color: ;
+    --modal-button-hover-bg: ;
+
+    --close-X-color: #aaa;
+    --close-X-focus-hover-color: #000;
+
+    --footer: #333;
+    --footer-borda: rgba(0, 0, 0, 0);
+    --footer-sombra: rgba(0, 0, 0, 0);
+    --footer-bg: #FFB3C6;
+
+
+}
+
+.dark-mode:root {
+    --body: linear-gradient(135deg, #000, #222);
+    --body-color: #fff;
+    --header: #1a1a1a;
+    --header-color: #fff;
+    --nav: #000;
+    --nav-a: #00FF9D;
+    --nav-a-hover-bg: #ff009d;
+    --nav-a-hover: #fff;
+    --main-bg: rgba(0, 0, 0, 0);
+    --texto: #fff;
+
+    --section-admin: #1a1a1a; 
+    --section-admin-h2: #fff;
+    --ilustrativo: rgb(255, 255, 255);
+
+    --tabela-border: #ddd;
+    --tabela-bg: #333;
+    --tabela-alt-bg: #303030;
+    --tabela-hover-bg: #333;
+
+    --scrollbar-bg: #2b2b2b;
+    --scrollbar-thumb: #555555;
+
+    --button-acao-bg: #ff009d;
+    --button-acao-color: #fff;
+    --button-acao-hover-bg: #ffffff;
+    --button-acao-hover-color: #000;
+    --button-acao-hover-border: #00FF9D;
+
+    --estatistica-bg: #333;
+    --estatistica-color: #fff;
+
+    --button-view-more-bg: #ff009d;
+    --button-view-more-color: #fff;
+    --button-view-more-hover-bg: rgb(189, 48, 135);
+
+    --modal-bg:  #1a1a1a;
+    --modal-border: ;
+    --modal-input-border: ;
+    --modal-input-bg: #333;
+    --modal-input-color: #fff;
+    --modal-button-bg: ;
+    --modal-button-color: ;
+    --modal-button-hover-color: ;
+    --modal-button-hover-bg: ;
+
+    --footer: #00FF9D;
+    --footer-borda: #ff009d;
+    --footer-bg: #000;
+
+
+}
+
+
+/* Regras gerais do CSS */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--body-color);
+    background: var(--body);
+  }
+  
+  header {
+    background: var(--header);
+    color: var(--header-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-admin {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--nav);
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    z-index: 2;
+    white-space: nowrap; /* Impede a quebra de linha dos itens */
+}
+  
+  .navbar-admin ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .navbar-admin li {
+    margin: 0;
+  }
+  
+  .navbar-admin a {
+    color: var(--nav-a);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar-admin a:hover {
+    background-color: var(--nav-a-hover-bg);
+    color: var(--nav-a-hover);
+  }
+  
+  .mudarTema {
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: auto; /* Garante que o botão fique colado à direita na navbar */
+}
+
+  .ilustrativo {
+    color: var(--ilustrativo);
+  }  
+
+  main {
+    flex: 1;
+    padding: 2rem;
+    background: var(--main-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; 
+  }
+  
+  section {
+    margin: 20px 0;
+  }
+  
+  .section-admin {
+      padding: 20px;
+      background: var(--section-admin);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section-admin h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--section-admin-h2);
+      font-family: 'Consolas', monospace;
+  }
+  
+  .tabela-usuarios, .tabela-logs, .tabela-planos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; /* Adiciona rolagem horizontal */
+    display: table; /* Garante que o conteúdo respeite o tamanho da tela */
+}
+  
+  .tabela-usuarios th, .tabela-logs th, .tabela-planos th,
+  .tabela-usuarios td, .tabela-logs td, .tabela-planos td {
+      border: 1px solid var(--tabela-border);
+      padding: 12px;
+      text-align: left;
+  }
+  
+  .tabela-usuarios th, .tabela-logs th, .tabela-planos th {
+      background-color: var(--tabela-bg);
+  }
+  
+  .tabela-usuarios tr:nth-child(even), .tabela-logs tr:nth-child(even), .tabela-planos tr:nth-child(even) {
+      background-color: var(--tabela-alt-bg);
+  }
+  
+  .tabela-usuarios tr:hover, .tabela-logs tr:hover, .tabela-planos tr:hover {
+      background-color: var(--tabela-hover-bg);
+  }
+  
+  .btn-acao {
+      background-color: var(--button-acao-bg);
+      color: var(--button-acao-color);
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-acao:hover {
+      background-color: var(--button-acao-hover-bg);
+      color: var(--button-acao-hover-color);
+      border: 1px solid var(--button-acao-hover-border);
+  }
+  
+  .estatisticas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Torna a grid responsiva com colunas flexíveis */
+    gap: 20px;
+    margin: 20px 0;
+    max-width: 100%; /* Limitar a largura para evitar overflow */
+    box-sizing: border-box;
+}
+  
+  .estatistica-item {
+    background-color: var(--estatistica-bg); 
+    border: 1px solid var(--estatistica-color); 
+    border-radius: 8px; 
+    padding: 15px; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 3px;
+}
+  
+
+  
+  footer {
+    padding: 1rem;
+    color: var(--footer);
+    background-color: var(--footer-bg);
+    border-top: 2px solid var(--footer-borda);
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  
+  footer a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin: 20px 0; 
+  }
+  
+  .chart-container {
+    flex: 1; 
+    max-width: 100%; /* Limitar para que o gráfico não ultrapasse a largura da tela */
+    min-width: 250px; /* Garante um tamanho mínimo para o gráfico */
+    margin: 0 auto; 
+    box-sizing: border-box; /* Garante que padding e margens sejam incluídos no tamanho do contêiner */
+}
+  
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%; /* Evita que os gráficos passem da largura da tela */
+}
+  
+  .view-more-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn-view-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-view-more-bg); /* Cor de fundo cinza suave */
+    color: var(--button-view-more-color); /* Cor do texto branco */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  }
+  
+  .btn-view-more:hover {
+    background-color: var(--button-view-more-hover-bg); /* Cor de fundo cinza escuro ao passar o mouse */
+  }
+  
+  /* Estilos específicos para os modais */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+  }
+  
+  .modal-content {
+    background-color: var(--modal-bg); 
+    margin: 5% auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000; 
+    text-decoration: none; 
+    cursor: pointer; 
+  }
+  
+  form label {
+    display: block;
+    margin: 10px 0 5px;
+  }
+  
+  form input, form textarea, form select {
+    width: 98%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--modal-input-bg);
+    color: var(--modal-input-color);
+  }
+  
+  form button {
+    background-color: #FF6EC7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #ffffff;
+    color: #FF6EC7;
+    border: 1px solid #FF6EC7;
+  }
+
+  @media (max-width: 768px) {
+    .estatisticas-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .tabela-usuarios, .tabela-logs, .tabela-planos {
+      display: block; /* Garante que o conteúdo respeite o tamanho da tela */
+  }
+
+    .mudarTema {
+      margin-left: 0; /* Remove o espaçamento à direita */
+      align-self: center; /* Garante alinhamento vertical junto aos <li> */
+      order: 1; /* Posiciona o botão logo após os itens <li> na sequência do flex */
+
+    }
+
+    .navbar-admin {
+      justify-content: flex-start; /* Impede que os itens sejam centralizados, permitindo overflow completo */
+    }
+    
+    .olaUsuario {
+      font-size: 0.9rem; /* Reduz levemente o tamanho para telas pequenas */
+      margin-right: 0.5rem; /* Ajusta o espaçamento */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .estatisticas-container {
+        grid-template-columns: 1fr; 
+    }
+  }
+
+/* OLÁ USUÁRIO */
+
+.olaUsuario {
+  flex-shrink: 0; /* Impede que o texto seja reduzido */
+  margin-left: 1rem;
+  margin-right: 1rem; /* Espaço entre a mensagem e o próximo item */
+  white-space: nowrap; /* Impede a quebra de linha */
+  font-size: 1rem; /* Tamanho consistente com o restante da barra */
+  color: var(--nav-a); /* Mesma cor dos links */
+  display: flex; /* Garante alinhamento flexível */
+  align-items: center; /* Alinha verticalmente ao centro */
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraduQuiz - Perguntas</title>
+    <link rel="stylesheet" href="css/quiz_japones.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navbar fixa no topo -->
+        <header class="navbar">
+            <nav>
+                <ul class="nav-left">
+                    <li><a href="index.html">Voltar à tela inicial</a></li>
+                    <li><a href="..\index.php">Conheça o TraduGeek</a></li>
+                </ul>
+                <ul class="nav-right">
+                    <li class="music-player">
+                        <button id="playPauseBtn">▶️</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cherry-blossom-container"></div>
+            <audio id="backgroundMusic" loop>
+                <source src="Música/Pixel Love.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </header>
+
+        <!-- Conteúdo principal do quiz -->
+        <main class="quiz-container">
+            <header>
+                <h1>TraduGeek</h1>
+                <p>Desafie seus conhecimentos de Inglês e Japonês!</p>
+            </header>
+
+            <div class="question-box">
+                <h2 class="question" id="question">Carregando...</h2>
+                <div id="answers" class="answer-btns"></div>
+            </div>
+            <!-- Powered by TraduGeek -->
+            <div class="footer">
+                <p>Powered by TraduGeek</p>
+            </div>
+        </main>
+         <img src="Imagens/player3.png" alt="Imagem de footer" class="footer-image">
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 TraduQuiz. Todos os direitos reservados – Que o poder das palavras e traduções esteja com você!</p>
+        </footer>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "O que significa a palavra 'Sakura' em japonês?", answers: ["Flor de cerejeira", "Montanha", "Árvore", "Verão"], correct: 0 },
+            { question: "Qual é o nome do protagonista de 'Naruto' em japonês?", answers: ["ナルト", "サスケ", "カカシ", "ヒナタ"], correct: 0 },
+            { question: "O que significa 'Kawaii' em japonês?", answers: ["Bonito", "Estranho", "Rápido", "Triste"], correct: 0 },
+            { question: "O que significa 'Arigatou'?", answers: ["Desculpe", "Obrigado", "Oi", "Adeus"], correct: 1 },
+            { question: "Como se diz 'olá' em japonês?", answers: ["Konnichiwa", "Sayonara", "Arigatou", "Gomen nasai"], correct: 0 },
+            { question: "Qual é o significado de 'Baka' em japonês?", answers: ["Inteligente", "Imbecil", "Feliz", "Fortaleza"], correct: 1 },
+            { question: "O que significa 'Senpai'?", answers: ["Alguém mais velho", "Aluno", "Professor", "Líder"], correct: 0 },
+            { question: "Qual é o nome do personagem principal de 'One Piece' em japonês?", answers: ["ルフィ", "ゾロ", "ナミ", "サンジ"], correct: 0 },
+            { question: "O que significa 'Senpai' em relação a um estudante?", answers: ["Aluno mais novo", "Aluno mais velho", "Professor", "Diretor"], correct: 1 },
+            { question: "Qual é o nome do vilão principal de 'Dragon Ball' em japonês?", answers: ["フリーザ", "ベジータ", "セル", "魔人ブウ"], correct: 0 },
+            { question: "O que significa 'Kitsune'?", answers: ["Lobo", "Raposa", "Leão", "Cachorro"], correct: 1 },
+            { question: "Como se chama a espada de Ichigo em 'Bleach'?", answers: ["Zangetsu", "Tensa Zangetsu", "Sengoku", "Shusui"], correct: 0 },
+            { question: "O que significa a palavra 'Nani'?", answers: ["Quem", "O que", "Onde", "Por quê"], correct: 1 },
+            { question: "Qual é a tradução de 'Kage' em japonês?", answers: ["Luz", "Sombras", "Coração", "Céu"], correct: 1 },
+            { question: "Como se diz 'obrigado' em japonês?", answers: ["Arigatou", "Gomen", "Sayonara", "Konbanwa"], correct: 0 },
+            { question: "O que significa 'Manga' em japonês?", answers: ["Quadrinhos", "Animação", "Filme", "Vídeo game"], correct: 0 },
+            { question: "Qual é o nome do pokémon de água que tem o nome de 'Squirtle' em japonês?", answers: ["ゼニガメ", "フシギダネ", "ヒトカゲ", "ポケモン"], correct: 0 },
+            { question: "O que significa 'Yokai'?", answers: ["Espírito", "Demônio", "Ser sobrenatural", "Deus"], correct: 2 },
+            { question: "Como se diz 'falar' em japonês?", answers: ["Kiku", "Hanashimasu", "Aruku", "Tabemasu"], correct: 1 },
+            { question: "O que significa 'Tenshi'?", answers: ["Deus", "Demônio", "Anjo", "Espírito"], correct: 2 },
+            { question: "Qual é o nome do ataque de 'Naruto' que invoca uma enorme bola de chakra?", answers: ["Rasengan", "Chidori", "Kamehameha", "Chidori Senbon"], correct: 0 },
+            { question: "O que significa 'Otaku'?", answers: ["Pessoa que adora anime e cultura pop japonesa", "Pessoa que gosta de videogame", "Pessoa que estuda", "Pessoa que viaja muito"], correct: 0 },
+            { question: "Qual é a tradução de 'Himitsu'?", answers: ["Mentira", "Segredo", "Amor", "Medo"], correct: 1 },
+            { question: "Qual é o nome do personagem principal de 'Attack on Titan'?", answers: ["エレン", "ミカサ", "アルミン", "リヴァイ"], correct: 0 },
+            { question: "O que significa 'Kagebunshin no Jutsu'?", answers: ["Técnica de clonagem", "Técnica de espada", "Técnica de invocação", "Técnica de controle do tempo"], correct: 0 }
+        ];
+
+        let currentQuestionIndex = 0;
+        let shuffledQuestions = [];
+        let score = 0;
+
+        function shuffleQuestions() {
+            shuffledQuestions = questions.sort(() => Math.random() - 0.5).slice(0, 10);
+        }
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= shuffledQuestions.length) {
+                localStorage.setItem("quizScore", score); // Salva a pontuação no localStorage
+                window.location.href = 'result.html'; // Redireciona para a página de resultados
+                return;
+            }
+
+            const questionData = shuffledQuestions[currentQuestionIndex];
+            const questionElement = document.getElementById("question");
+            const answersContainer = document.getElementById("answers");
+
+            questionElement.textContent = questionData.question;
+            answersContainer.innerHTML = "";
+
+            questionData.answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.classList.add("answer-btn");
+                button.textContent = answer;
+                button.onclick = () => checkAnswer(button, index === questionData.correct);
+                answersContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(button, isCorrect) {
+            const buttons = document.querySelectorAll(".answer-btn");
+            buttons.forEach(btn => btn.disabled = true);
+
+            const questionElement = document.getElementById("question");
+
+            if (isCorrect) {
+                button.style.backgroundColor = '#00CFFF';
+                button.style.boxShadow = '0 0 20px #00CFFF';
+                button.innerHTML += ' - <strong>Correto!</strong>';
+                questionElement.innerHTML += '<br><span style="color: #00CFFF;">Resposta correta!</span>';
+                score++; // Incrementa a pontuação
+            } else {
+                button.style.backgroundColor = '#FF6EC7';
+                button.style.boxShadow = '0 0 20px #FF6EC7';
+                button.innerHTML += ' - <strong>Errado!</strong>';
+                questionElement.innerHTML += '<br><span style="color: #FF6EC7;">Resposta errada!</span>';
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                loadQuestion();
+            }, 2000);
+        }
+
+        document.getElementById("playPauseBtn").addEventListener("click", () => {
+            const audio = document.getElementById("backgroundMusic");
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = "⏸️";
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = "▶️";
+            }
+        });
+
+        shuffleQuestions();
+        loadQuestion();
+    </script>
+</body>
+</html>
+

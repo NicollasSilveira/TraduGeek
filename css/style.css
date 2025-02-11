@@ -1,0 +1,1150 @@
+:root {
+  --rosa-claro: #FFB3C6;
+  --rosa-medio: #FFC0CB;
+  --azul-claro: #00CFFF;
+  --azul-escuro: #00a8d4;
+  --rosa-quente: #FF6EC7;
+  --branco: #FFFFFF;
+  --rosa-medio-escuro: #FF8C94;
+  --cinza-claro: #f9f9f9;
+  --cinza-claro2: #f4f4f4;
+  --cinza-claro3: #eeeeee;
+  --cinza-escuro: #333;
+  --preto: #000;
+
+  --body: #f5b5b8;
+  --body-color: #333;
+  --header: #FFB3C6;
+  --header-color: #333;
+  --nav: #f5b5b8;
+  --nav-a: #000000;
+  --nav-a-hover-bg: #fff;
+  --nav-a-hover: #000;
+  --main-bg: #F4F3F9;
+  --texto: #333;
+  --h1: #000000;
+  --h2: #000000;
+  --h2-tradublog: #FF8C94; 
+  
+  --button-trad: #ffffff;
+  --button-trad-bg: #f5b5b8;    
+  --button-trad-hover:  #f5b5b8;
+  --button-trad-hover-bg: #FFFFFF;
+  --scrollbar-bg: #f0f0f0;
+  --scrollbar-thumb: #cccccc;
+
+  --tradu-blog-bg:linear-gradient(to bottom, #ffffff, #ffeaef);;
+  --tradu-blog-color: #fff;
+  --tradu-blog-h3: #FF8C94;
+  --tradu-blog-card-bg: #f9f9f9;
+  --tradu-blog-card-sombra-1: rgba(0, 0, 0, 0);
+  --tradu-blog-card-sombra-2: rgba(0, 0, 0, 0);
+  --sobrenos-bg: rgba(0, 0, 0, 0);
+  --sobrenos-nav-bg: #f5b5b8;
+  --sobrenos-nav-bg-hover: #ffff;
+  --sobrenos-nav-color: #ffff;
+  --sobrenos-nav-color-hover: #f5b5b8;
+  --avatar-sombra-1: rgba(0, 0, 0, 0.4);
+  --avatar-sombra-2: rgba(0, 0, 0, 0.3);
+  --central-ajuda-bg: #fff;
+  --artigo-h3:#000000;
+  --artigo-hover: #FF6EC7;
+  --button-fonte-bg: #FF6EC7;
+  --button-fonte-color: #ffffff;
+  --button-fonte-hover: #FFFFFF;
+  --button-fonte-color-hover: #FF6EC7;
+  --button-sombra-1: rgba(0, 0, 0, 0);
+  --button-sombra-2: rgba(0, 0, 0, 0);
+  --footer: #333;
+  --texto-footer: rgba(0, 0, 0, 0);
+  --footer-borda: rgba(0, 0, 0, 0);
+  --footer-sombra: rgba(0, 0, 0, 0);
+  --footer-bg: #FFB3C6;
+
+  --caixa-sombra: rgba(0,0,0,0.1);
+  --caixa-borda: #000000;
+  --h2-sombra-1: rgba(0, 0, 0, 0);
+  --h2-sombra-2: rgba(0, 0, 0, 0);
+
+  --h2-display: inline-block;
+  --h2-color: #000;
+  --h2-border-right: rgba(0, 0, 0, 0);
+  --h2-text-shadow-1: rgba(0, 0, 0, 0);
+  --h2-text-shadow-2: rgba(0, 0, 0, 0);
+  --animation-duration: 3.5s;
+  --animation-steps: steps(80, end);
+  --caret-blink-duration: 0.75s;
+  --caret-blink-timing: step-end;
+  --blink-caret: #0000;
+
+  --color-button: #ffffff;
+  --bg-color-button: #FF6EC7;
+  --bg-color-button-hover: #ffffff;
+  --color-button-hover: #FF6EC7;
+}
+
+.dark-mode:root {
+  --cor-preto: #000000;
+  --cor-cinza-escuro: #1a1a1a;
+  --cor-rosa-neon: #ff009d;
+  --cor-verde-neon: #00FF9D;
+  --cor-cinza-medio: #333333;
+  --cor-branco: #ffffff;
+
+  --body: #000;
+  --body-color: #fff;
+  --header: #1a1a1a;
+  --header-color: #fff;
+  --nav: #000;
+  --nav-a: #00FF9D;
+  --nav-a-hover-bg: #ff009d;
+  --nav-a-hover: #fff;
+  --main-bg: #1a1a1a;
+  --texto: #fff;
+  --h1: #fff;
+  --h2: #ff009d;
+  --h2-tradublog: #ff009d;
+
+  --button-trad: #fff;
+  --button-trad-bg: #ff009d;
+  --button-trad-hover-bg:  #00FF9D;
+  --button-trad-hover: #fff;
+
+  --scrollbar-bg: #2b2b2b;
+  --scrollbar-thumb: #555555;
+
+  --tradu-blog-bg: #1a1a1a;
+  --tradu-blog-h3: #00FF9D;
+  --tradu-blog-card-bg: #333;
+  --tradu-blog-card-sombra-1: #ff009d;
+  --tradu-blog-card-sombra-2: #00FF9D;
+  --sobrenos-bg: #1a1a1a;
+  --avatar-sombra: #00FF9D;
+  --avatar-sombra-1: #00FF9D;
+  --avatar-sombra-2: #00FF9D;
+  --central-ajuda-bg: #1a1a1a;
+  --artigo-h3:#ff009d;
+  --artigo-hover: #00FF9D;
+  --button-fonte-bg: #ff009d;
+  --button-fonte-color: #fff;
+  --button-fonte-hover: #00FF9D;
+  --button-fonte-color-hover: #fff;
+  --button-sombra-1: #ff009d;
+  --button-sombra-2: #00FF9D;
+  --footer: #00FF9D;
+  --texto-footer: #00FF9D;
+  --footer-borda: #ff009d;
+  --footer-bg: #000;
+
+  --caixa-sombra: #ff009d;
+  --caixa-borda: rgba(0, 0, 0, 0);
+  --h2-sombra-1: #ff009d ;
+  --h2-sombra-2: #00FF9D;
+
+  --h2-display: inline-block;
+  --h2-color: #ffffff;
+  --h2-border-right: #00FF9D;
+  --h2-text-shadow-1: none;
+  --h2-text-shadow-2: none;
+  --animation-duration: 3.5s;
+  --animation-steps: steps(80, end);
+  --caret-blink-duration: 0.75s;
+  --caret-blink-timing: step-end;
+  --blink-caret: #00FF9D;
+
+  --color-button: #ffffff;
+  --bg-color-button: #ff009d;
+  --bg-color-button-hover: #00FF9D;
+  --color-button-hover: #ffffff;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: var(--body); /* Fundo preto para efeito neon */
+}
+
+/* Nav - INICIO */
+
+header {
+  background: var(--header);
+  color: var(--header-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.barraNav {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--nav);
+  border-radius: 0 0 15px 15px;
+  position: relative;
+  overflow-x: auto; /* Permite a rolagem horizontal */
+  z-index: 2;
+  white-space: nowrap; /* Impede a quebra de linha dos itens */
+}
+
+.barraNav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center; /* Centraliza os itens da barraNav */
+  flex: 1; /* Faz com que o ul ocupe o espaço disponível */
+}
+
+.barraNav li {
+  margin: 0;
+  
+}
+
+.barraNav a {
+  color: var(--nav-a);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.barraNav a:hover {
+  background-color: var(--nav-a-hover-bg);
+  color: var(--nav-a-hover);
+}
+
+.mudarTema {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto; /* Garante que o botão fique colado à direita na navbar */
+}
+
+/* Nav - FIM */
+
+
+/* Conteúdo Geral - INICIO */
+
+main {
+  flex: 1;
+  padding: 2rem;
+  background: var(--main-bg);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Conteúdo Geral - FIM */
+
+
+/* Seção TraduGeek - INICIO */
+
+.conteudoTraduGeek {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1050px;
+  margin-bottom: 2rem;
+  z-index: 2;
+  gap: 10px;
+}
+
+.textoTraduGeek {
+  flex: 1;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--texto);
+  text-align: justify;
+  z-index: 2;
+}
+
+.avatarPamela {
+  width: 370px;
+  height: auto;
+  border-radius: 150px;
+  z-index: 3;
+  bottom: 45px;
+  position: relative;
+  left: 30px;
+
+}
+
+.botoesTraducao {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.botoesTraducao button {
+  background: var(--button-trad-bg);
+  color: var(--button-trad);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.botoesTraducao button:hover {
+  background: var(--button-trad-hover-bg);
+  color: var(--button-trad-hover);
+}
+
+
+
+
+#typing {
+  display: var(--h2-display);
+  border-right: 0.15em solid var(--h2-border-right);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: 'Consolas', monospace;
+  animation: typing var(--animation-duration) var(--animation-steps), blink-caret var(--caret-blink-duration) var(--caret-blink-timing) infinite;
+  margin-bottom: 0rem; 
+  text-align: center;
+  padding-left: 0rem; 
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  max-width: 25.5ch;
+  margin-top: 0px;
+}
+
+.signup-box h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--h2-color);
+  font-size: 1.7rem;
+  font-family: 'Consolas', monospace;
+  text-shadow: 0 0 8px var(--h2-text-shadow-1), 0 0 16px var(--h2-text-shadow-2);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--blink-caret); }
+}
+/* Seção TraduGeek - FIM */
+
+.traduquiz-img {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  width: 100%;
+  overflow: hidden;
+}
+
+.traduquiz-img img {
+  max-width: 60%; /* Diminui a imagem proporcionalmente */
+  height: auto;
+  display: block;
+  margin: auto; /* Garante a centralização */
+  border-radius: 500px;
+}
+
+.cardsTraduQuiz {
+  background: var(--tradu-blog-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 2px solid var(--caixa-borda);
+  padding: 1.5rem;
+  width: 30%;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--tradu-blog-color);
+  z-index: 2;
+}
+
+.cardsTraduQuiz:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px var(--tradu-blog-card-sombra-1), 0 0 20px var(--tradu-blog-card-sombra-2);
+}
+
+.cardsTraduQuiz h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--tradu-blog-h3);
+}
+
+.cardsTraduQuiz p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.cardsTraduQuiz button {
+  background: var(--button-trad-bg);
+  color: var(--button-trad);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+.cardsTraduQuiz button:hover {
+  background: var(--button-trad-hover-bg);
+  color: var(--button-trad-hover);
+}
+
+/* Seção TraduBlog - INICIO */
+
+.secaoTraduBlog {
+  background: var(--tradu-blog-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  box-shadow: 0 0 20px var(--caixa-sombra);
+  border: 2px solid var(--caixa-borda);
+  text-align: center;
+  z-index: 2;
+}
+
+.secaoTraduBlog h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--h2-tradublog);
+  font-family: 'Consolas', monospace;
+  text-shadow: 0 0 10px var(--h2-sombra-1), 0 0 20px var(--h2-sombra-2);
+  z-index: 2;
+  margin-top: -0px;
+}
+
+.conteudoTraduBlog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  z-index: 2;
+}
+
+.cardsTraduBlog {
+  background: var(--tradu-blog-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 2px solid var(--caixa-borda);
+  padding: 1.5rem;
+  width: 30%;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--tradu-blog-color);
+  z-index: 2;
+}
+
+.cardsTraduBlog:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px var(--tradu-blog-card-sombra-1), 0 0 20px var(--tradu-blog-card-sombra-2);
+}
+
+.cardsTraduBlog h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--tradu-blog-h3);
+}
+
+.cardsTraduBlog p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* Seção TraduBlog - FIM */
+
+/* Seção Sobre Nós - INICIO */
+
+.secaoSobreNos {
+  background: var(--sobrenos-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 1500px;
+  text-align: center;
+  width: 1000px;
+  z-index: 2;
+}
+
+.secaoSobreNos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--h2);
+  font-family: 'Consolas', monospace;
+  text-shadow: 0 0 10px var(--h2-sombra-1), 0 0 20px var(--h2-sombra-2);
+  z-index: 2;
+}
+
+.secaoSobreNos p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.6;
+  z-index: 2;
+}
+
+.conteudoSobreNos {
+  display: flex;
+  justify-content: center; /* Centraliza os itens na página */
+  gap: 5rem; /* Aumenta o espaçamento entre as imagens */
+  flex-wrap: wrap; /* Faz as imagens quebrarem para a próxima linha em telas menores */
+  margin-top: 2rem;
+  width: 100%;
+  z-index: 2;
+}
+
+.molduraSobreNos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatarIntegrantes {
+  background: #333;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px var(--avatar-sombra-1), 0 0 20px var(--avatar-sombra-2); /* Efeito neon na borda */
+  overflow: hidden; /* Garante que a imagem não saia do círculo */
+  position: relative;
+  margin-bottom: 0.5rem; /* Espaçamento entre o círculo e o título */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição suave */
+}
+
+.avatarIntegrantes:hover {
+  transform: scale(1.1); /* Aumenta o tamanho da imagem ao passar o mouse */
+  box-shadow: 0 0 15px var(--avatar-sombra-1), 0 0 30px var(--avatar-sombra-2); /* Aumenta o efeito neon ao passar o mouse */
+}
+
+.avatarIntegrantes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o círculo sem distorção */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nomeIntegrantes {
+  font-size: 1rem; 
+  color: #00FF9D;
+  margin-top: 0.5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/* Carrossel Sobre Nós */
+.carrossel-wrapper {
+  position: relative;
+  max-width: 1000px; /* ajuste conforme necessário */
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+/* Container que oculta o overflow horizontal */
+.carrossel-container {
+  overflow: hidden;
+}
+
+/* O carrossel em si (display flex para os itens) */
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Cada item ocupa 25% da largura para 4 itens visíveis */
+.carrossel .molduraSobreNos {
+  flex: 0 0 25%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  pointer-events: auto; /* garante que o clique funcione */
+  padding-top: 35px;
+}
+
+
+/* Estilização dos botões de navegação */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--sobrenos-nav-bg);
+  color: var(--sobrenos-nav-bg-hover);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: transform 0.3s, background-color 0.3s;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.carousel-nav.left {
+  left: 10px;
+  top: 45%;
+}
+.carousel-nav.right {
+  right: 10px;
+  top: 45%;
+}
+.carousel-nav:hover {
+  background: var(--sobrenos-nav-bg-hover);
+  color: var(--sobrenos-nav-color-hover);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Modal melhorado */
+/* Animação de entrada do modal */
+@keyframes modalEntradaSuave {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalSaidaSuave {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Aplicando a animação ao modal */
+.modal-curriculo {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-conteudo {
+  position: relative;
+  background: var(--tradu-blog-card-bg);
+  padding: 2rem;
+  width: 85%;
+  max-width: 700px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  transform-origin: center;
+  max-height: 80vh; /* Altura máxima para o modal */
+  overflow-y: auto; /* Habilita o scroll vertical se o conteúdo exceder a altura */
+  animation-fill-mode: both;
+  will-change: transform, opacity; /* Otimiza as animações */
+  backface-visibility: hidden;
+}
+
+/* Adiciona a classe de animação ao abrir */
+.modal-curriculo.show .modal-conteudo {
+  animation: modalEntrada 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Adiciona a animação de saída ao fechar */
+.modal-curriculo.closing .modal-conteudo {
+  animation: modalSaida 0.3s ease;
+}
+
+/* Botões de navegação */
+.nav-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--sobrenos-nav-bg);
+  color: var(--sobrenos-nav-color);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-modal:hover {
+  background: var(--sobrenos-nav-bg-hover);
+  color: var(--sobrenos-nav-color-hover);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-modal.esquerda {
+  left: 20px;
+}
+
+.nav-modal.direita {
+  right: 20px;
+}
+
+.nav-modal svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Estilo do Currículo */
+.curriculo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.curriculo-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  border: 3px solid var(--rosa-quente);
+}
+
+.curriculo-section {
+  margin-bottom: 1.5rem;
+}
+
+.curriculo-header h2 {
+  color: var(--rosa-quente);
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.curriculo-header p {
+  color: var(--azul-claro);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.curriculo-section ul {
+  padding-left: 1.5rem;
+}
+
+.curriculo-section li {
+  margin-bottom: 0.5rem;
+  color: var(--texto);
+}
+
+.curriculo-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--azul-claro);
+  margin: 1.5rem 0 1rem;
+}
+
+/* Exemplo de animação de saída para a esquerda */
+.slide-out-left {
+  animation: slideOutLeft 0.3s forwards;
+}
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+/* Exemplo de animação de saída para a direita */
+.slide-out-right {
+  animation: slideOutRight 0.3s forwards;
+}
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* Exemplo de animação de entrada vindo da direita */
+.slide-in-right {
+  animation: slideInRight 0.3s forwards;
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Exemplo de animação de entrada vindo da esquerda */
+.slide-in-left {
+  animation: slideInLeft 0.3s forwards;
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Seção Sobre Nós - FIM */
+
+/* Seção Central de Ajuda - INICIO */
+
+.secaoCentralDeAjuda {
+  background: var(--central-ajuda-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 0 20px var(--caixa-sombra);
+  border: 2px solid var(--caixa-borda); /* Adiciona borda rosa neon */
+  z-index: 2;
+}
+
+.secaoCentralDeAjuda h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--h2-tradublog); /* Rosa neon */
+  font-family: 'Consolas', monospace;
+  text-shadow: 0 0 10px var(--h2-sombra-1), 0 0 20px var(--h2-sombra-2);
+}
+
+.secaoCentralDeAjuda p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.artigo {
+  cursor: pointer;
+  color: var(--artigo-h3); /* Rosa neon para os títulos dos artigos */
+  font-family: 'Consolas', monospace;
+  transition: transform 0.3s ease, color 0.3s ease; /* Animação suave de transformação e cor */
+}
+
+.artigo:hover {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+  color: var(--artigo-hover); /* Altera a cor para um verde neon suave ao passar o mouse */
+}
+
+.textoArtigo.oculto {
+  display: none;
+}
+
+/* Seção Central de Ajuda - FIM */
+
+/* Seção Acessibilidade - INICIO */
+
+.secaoAcessibilidade {
+  background: var(--sobrenos-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+  color: var(--texto);
+  z-index: 2;
+}
+
+.secaoAcessibilidade h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--h2); /* Rosa neon */
+  font-family: 'Consolas', monospace;
+  text-shadow: 0 0 10px var(--h2-sombra-1), 0 0 20px var(--h2-sombra-2);
+}
+
+.secaoAcessibilidade p {
+  font-size: 1rem;
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.ajusteFonteAcessibilidade {
+  margin-top: 15px;
+}
+
+.ajusteFonteAcessibilidade button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--button-fonte-bg);
+  color: var(--button-fonte-color);
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px var(--button-sombra-1), 0 0 20px var(--button-sombra-2);
+  font-family: 'Consolas', monospace;
+}
+
+.ajusteFonteAcessibilidade button:hover {
+  background-color: var(--button-fonte-hover);
+  color: var(--button-fonte-color-hover);
+  box-shadow: 0 0 15px var(--h2-border-right), 0 0 25px var(--footer-borda);
+}
+
+/* Seção Acessibilidade - FIM */
+
+/* Rodapé - INICIO */
+
+footer {
+  background: var(--footer-bg);
+  color: var(--footer);
+  padding: 1rem;
+  text-align: center;
+  border-top: 2px solid var(--footer-borda);
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 -2px 10px var(--footer-sombra);
+
+}
+
+.textoFooter {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-shadow: 0 0 5px var(--texto-footer);
+}
+
+/* Rodapé - FIM */
+
+/* Responsividade - INÍCIO */
+
+@media (max-width: 1024px) {
+  .barraNav {
+    justify-content: flex-start;
+  }
+
+  .conteudoTraduGeek {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .textoTraduGeek {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .avatarPamela {
+    width: 250px;
+  }
+
+  .mudarTema {
+    margin-left: 3px; /* Remove o espaçamento à direita */
+    align-self: center; /* Garante alinhamento vertical junto aos <li> */
+    order: 1; /* Posiciona o botão logo após os itens <li> na sequência do flex */
+    margin-top: -4px;
+  }
+
+  .botoesTraducao {
+    display: flex;
+    margin-left: 38%;
+  }
+
+  main {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .secaoTraduBlog h2, .secaoSobreNos h2 {
+    font-size: 2rem;
+  }
+
+  .conteudoTraduBlog {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardsTraduBlog {
+    width: 80%;
+  }
+
+  /* Organizando os avatares em até duas colunas */
+  .conteudoSobreNos {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar a linha */
+    gap: 0rem;
+  }
+
+  .molduraSobreNos {
+    width: 45%; /* Largura ajustada para caber dois avatares lado a lado */
+
+  }
+
+  .avatarIntegrantes {
+    width: 150px; /* Ajuste de tamanho do avatar */
+    height: 150px;
+  }
+
+  .secaoSobreNos {
+    padding: 1rem;
+    max-width: 100%; /* Garante que a seção ocupe a tela corretamente */
+  }
+
+  .secaoCentralDeAjuda {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mudarTema {
+    right: 0.5rem;
+  }
+
+  .olaUsuario {
+    font-size: 0.9rem; /* Reduz levemente o tamanho para telas pequenas */
+    margin-right: 0.5rem; /* Ajusta o espaçamento */
+  }
+
+  .conteudoTraduGeek {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem e os botões */
+    text-align: center; /* Garante o alinhamento centralizado */
+  }
+
+  .avatarPamela {
+    width: 100%; 
+    max-width: 250px; /* Define um tamanho máximo para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .botoesTraducao {
+    justify-content: center; /* Centraliza os botões */
+    margin-left: 0; /* Remove margens laterais */
+    width: auto; /* Ajusta o tamanho conforme necessário */
+  }
+
+  .secaoTraduBlog {
+    padding: 1rem;
+  }
+
+  .cardsTraduBlog {
+    width: 100%;
+  }
+
+  .secaoSobreNos {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .conteudoSobreNos {
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .avatarIntegrantes {
+    width: 140px;
+    height: 140px;
+  }
+
+  .secaoAcessibilidade h2 {
+    font-size: 2rem;
+  }
+
+  .secaoAcessibilidade {
+    padding: 1rem; /* Reduz o espaçamento interno */
+    max-width: 100%; /* Garante que a largura não ultrapasse 100% */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+    box-sizing: border-box; /* Garante que padding e border sejam considerados no tamanho */
+  }
+
+  footer {
+    padding: 0.5rem;
+  }
+}
+
+/* Responsividade - FIM */
+
+#cherry-blossoms {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: 1; 
+}
+
+.blossom {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("../Imagens/efeito-FlordeSakura.png");
+  background-size: cover;
+  animation: fall linear infinite;
+  opacity: 0.9;
+
+}
+
+.blossom .fade-out {
+  opacity: 0;
+  transition: opacity 5s ease-out; /* Transição de 2 segundos */
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+/* OLÁ USUÁRIO */
+
+.olaUsuario {
+  flex-shrink: 0; /* Impede que o texto seja reduzido */
+  margin-left: 1rem;
+  margin-right: 1rem; /* Espaço entre a mensagem e o próximo item */
+  white-space: nowrap; /* Impede a quebra de linha */
+  font-size: 1rem; /* Tamanho consistente com o restante da barra */
+  color: var(--nav-a); /* Mesma cor dos links */
+  display: flex; /* Garante alinhamento flexível */
+  align-items: center; /* Alinha verticalmente ao centro */
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 3px;
+}

@@ -1,0 +1,341 @@
+:root {
+    --body: linear-gradient(to bottom, #FFB3C6 0%, #FFC0CB 100%);
+    --body-color: #333;
+    --header: #FFB3C6;
+    --header-color: #333;
+    --nav: #FFB3C6;
+    --nav-a: #000000;
+    --nav-a-hover-bg: #fff;
+    --nav-a-hover: #000;
+    --main-bg: linear-gradient(135deg, #f9f9f9 0%, #f4f4f4 50%, #eeeeee 100%);;
+    --texto: #333;
+  
+    --h2: #000;
+  
+    --plano-card-bg: #fff;
+    --plano-borda: #ddd;
+    --plano-card-h2: #FF8C94;
+    --plano-card-h3: #FF8C94;
+  
+    --button-bg: #FF6EC7;
+    --button-color: #fff;
+    --button-hover-bg: #fff;
+    --button-hover-color: #FF6EC7;
+  
+    --footer-borda: rgba(0, 0, 0, 0);
+  
+  
+  
+  }
+  
+  .dark-mode:root {
+    --body: #000;
+    --body-color: #fff;
+    --header: #1a1a1a;
+    --header-color: #fff;
+    --nav: #000;
+    --nav-a: #00FF9D;
+    --nav-a-hover-bg: #ff009d;
+    --nav-a-hover: #fff;
+    --main-bg: #1a1a1a;
+    --texto: #fff;
+  
+    --h2: #ff009d;
+  
+    --plano-card-bg: #1a1a1a;
+    --plano-borda: #ddd;
+    --plano-card-h2: #FF8C94;
+    --plano-card-h3: #00FF9D;
+  
+    --button-bg: #ff009d;
+    --button-color: #fff;
+    --button-hover-bg: #00FF9D;
+    --button-hover-color: #ffffff;
+  
+    --footer-borda: #ff009d;
+  
+  }
+  
+  html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+  
+    body {
+      font-family: 'Source Code Pro', monospace;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: var(--body-color);
+      background: var(--body);
+      font-size: 1rem;
+    }
+  
+    header {
+    background: var(--header);
+    color: var(--header-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  
+    .navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--nav); 
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    overflow-x: auto; /* Permite a rolagem horizontal */
+    z-index: 2;
+    white-space: nowrap;
+    }
+  
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex: 1;
+    }
+  
+    .navbar li {
+      margin: 0;
+    }
+  
+    .navbar a {
+      color: var(--nav-a);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.75rem;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  
+    .navbar a:hover {
+      background-color: var(--nav-a-hover-bg); 
+      color: var(--nav-a-hover);
+    }
+  
+    .mudarTema {
+      font-size: 1.5rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      display: inline-block;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: auto; /* Garante que o botão fique colado à direita na navbar */
+  }
+  
+    main {
+      flex: 1;
+      padding: 2rem;
+      background: var(--main-bg);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+      .planos-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        z-index: 1; 
+      }
+  
+      h2 {
+        text-align: center; 
+        color: var(--h2); 
+        font-family: 'Consolas', monospace;
+        margin-bottom: 30px; 
+        z-index: 1; 
+      }
+  
+      .plano-card {
+        background-color: var(--plano-card-bg);
+        border: 1px solid var(--plano-borda);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        max-width: 30%;
+        min-width: 250px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center; 
+        z-index: 1; 
+      }
+  
+      .plano-card h3 {
+        font-size: 1.5rem; 
+        text-align: center; 
+        margin-bottom: 15px;
+        z-index: 1; 
+      }
+  
+      .plano-card ul {
+        font-size: 1.2rem; 
+        padding-left: 0; 
+        margin: 0; 
+        list-style: none;
+        text-align: left; 
+        z-index: 1;
+        height: 380px;
+      }
+  
+      .plano-card li {
+        margin-bottom: 10px; 
+        z-index: 1; 
+      }
+  
+      .plano-card img {
+        display: block;
+        margin: 20px auto; 
+        max-width: 30%; 
+        height: auto; 
+        z-index: 1; 
+      }
+  
+      .plano-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1; 
+      }
+  
+      .plano-card h2 {
+        font-size: 2rem;
+        color: var(--plano-card-h2); 
+        margin-bottom: 20px;
+        font-family: 'Consolas', monospace;
+        text-align: center; 
+        z-index: 1; 
+      }
+  
+      .plano-card h3 {
+        font-size: 1.2rem;
+        color: var(--plano-card-h3); 
+        margin: 10px 0;
+        font-family: 'Consolas', monospace;
+        text-align: center; 
+        z-index: 1; 
+      }
+  
+      .botoesTraducao button {
+        background: var(--button-trad-bg);
+        color: var(--button-trad);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+      }
+  
+  
+      #cherry-blossoms {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; 
+        z-index: 1; 
+      }
+      
+      .blossom {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url("../Imagens/flor-cerejeira.png");
+        background-size: cover;
+        animation: fall linear infinite;
+        opacity: 0.9;
+      
+      }
+      
+      @keyframes fall {
+        0% {
+            transform: translateY(-100px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(100vh) rotate(360deg);
+        }
+      }
+  
+      .botao-mer {
+        background: var(--button-bg); 
+        color: var(--button-color);
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        width: 100px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s, transform 0.3s;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 0.5rem; 
+        margin: 20px auto; 
+        text-decoration: none; /* Remove underline */
+        text-align: center;   /* Centralizar o texto */
+    }
+    
+    .botao-mer:hover {
+        background-color: var(--button-hover-bg);
+        color: var(--button-hover-color);
+        transform: scale(1.05); /* Pequeno zoom no hover */
+    }
+  
+      .select-plan-button:hover {
+        background-color: var(--button-hover-bg); 
+      }
+  
+    footer .footer-content {
+        text-align: center;
+        padding: 20px;     
+    }
+  
+    footer {
+      border-top: 2px solid var(--footer-borda);
+    }
+  
+  
+    @media (max-width: 1100px) {
+      .plano-card ul {
+        height: 400px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .plano-card {
+        max-width: 100%;
+        z-index: 1; 
+      }
+    }
+
+    #mer {
+        width: 75%;
+    }
+
+/* OLÁ USUÁRIO */
+
+.olaUsuario {
+  flex-shrink: 0; /* Impede que o texto seja reduzido */
+  margin-left: 1rem;
+  margin-right: 1rem; /* Espaço entre a mensagem e o próximo item */
+  white-space: nowrap; /* Impede a quebra de linha */
+  font-size: 1rem; /* Tamanho consistente com o restante da barra */
+  color: var(--nav-a); /* Mesma cor dos links */
+  display: flex; /* Garante alinhamento flexível */
+  align-items: center; /* Alinha verticalmente ao centro */
+}
